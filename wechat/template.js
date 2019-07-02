@@ -11,7 +11,7 @@ module.exports = options => {
         '<MsgType><![CDATA[' + options.msgType + ']]></MsgType>';
 
     if(options.msgType === 'text'){
-        replyMessage += '<Content><![CDATA]>' + options.content + ']]></Content>';
+        replyMessage += '<Content><![CDATA[' + options.content + ']]></Content>';
     }else if(options.msgType === 'image'){
         replyMessage += '<Image><Mediald><![CDATA[' + options.mediald +']]></Mediald></Image>';
     }else if(options.msgType === 'voice'){
