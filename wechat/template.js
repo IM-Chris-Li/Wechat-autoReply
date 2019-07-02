@@ -34,7 +34,7 @@ module.exports = options => {
         replyMessage += '<ArticleCount>' + options.content.length + '</ArticleCount>' +
             '<Articles>';
 
-        options.forEach(item => {
+        options.content.forEach(item => {
             replyMessage += '<item>' +
                 '<Title><![CDATA[' + item.title + ']]></Title>' +
                 '<Description><![CDATA[' + item.description + ']]></Description>' +
