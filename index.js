@@ -6,7 +6,7 @@ const app = express();
 
 app.use(auth());
 
-app.listen(3000,err => {
+app.listen(80,err => {
     if(!err){
         console.log('服务器启动成功 ---')
     }
