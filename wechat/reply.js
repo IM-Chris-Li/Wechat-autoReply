@@ -56,6 +56,20 @@ module.exports = async message => {
         + '缩放大小:' + message.Scale + '详情:' + message.Label;
     }else if(message.MsgType === 'link'){
         content = '标题:' + message.Title + '描述:' + message.Description + '网址:' + message.Url;
+    }else if(message.MsgType === 'event'){
+        if(message.Event === 'subscribe'){
+            //用户订阅事件
+            content = 'Nice Shoot bro~';
+        }
+        if(message.EventKey){
+            //扫描带参数的二维码的订阅事件
+            content = 'Nice Scan bro~';
+        }
+    }else if(message.Event === 'CLICK'){
+        content = 'click menu';
+    }else if(message.Event === 'VIEW'){
+        //用户点击菜单，跳转到其他url
+        console.log('--- url跳转 ---');
     }
 
     //将最终回复消息内容添加到options中

@@ -1,0 +1,56 @@
+/*
+    菜单配置
+ */
+
+module.exports = {
+    "button":[
+        {
+            "type":"click",
+            "name":"首页",
+            "key":"首页"
+        },
+        {
+            "name":"二级菜单",
+            "sub_button":[
+                {
+                    "type":"view",
+                    "name":"跳转Tesla",
+                    "url":"https://tesla.com/"
+                },
+                {
+                    "type":"scancode_waitmsg",
+                    "name":"扫码带提示",
+                    "key":"扫码带提示"
+                },
+                {
+                    "tpye":"scancode_push",
+                    "name":"扫码推事件",
+                    "key":"扫码推事件"
+                },
+                {
+                    "type":"pic_sysphoto",
+                    "name":"系统拍照发图",
+                    "key":"系统拍照发图"
+                },
+            ]
+        },
+        {
+            "name":"功能",
+            "sub_button":[
+                {
+                    "type":"pic_weixin",
+                    "name":"微信相册发送图",
+                    "key":"picture"
+                },
+                {
+                    "type":"location_select",
+                    "name":"send loaction",
+                    "key":"loacation"
+                },
+                {
+                    //图文消息
+                }
+            ]
+        }
+    ]
+}

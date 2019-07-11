@@ -5,11 +5,15 @@ const rp = require('request-promise-native');
 const request = require('request');
 //引入fs模块
 const {readFile, writeFile, createReadStream, createWriteStream} = require('fs');
+//引入接口文件
+const api = require('../libs/api');
+//引入菜单
+const menu = require('./menu');
 
 class Wechat {
     getAccessToken () {
         //定义请求地址
-        const url = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appID}&secret=${appsecret}`;
+        const url = `${api.accessToken}&appid=${appID}&secret=${appsecret}`;
         /*
           问题：需要将回调函数中的数据返回出去？
           解决：用promise解决
@@ -115,7 +119,7 @@ class Wechat {
             })
             .catch(async err => {
                 console.log(err);
-//重新发送请求获取凭据
+                //重新发送请求获取凭据
                 const data = await this.getAccessToken();
                 //保存下来
                 await this.saveAccessToken(data);
@@ -130,6 +134,76 @@ class Wechat {
                 return Promise.resolve(res);
             })
     }
+    //创建菜单
+    createMenu(body){
+        return new Promise((resolve,reject) => {
+            this.fetchAccessToken()
+                .then(res => {
+                    const url = `${api.menu.create}access_token=${res.access_token}`;
+                    rp({method:'POST',json:true,url,body})
+                        .then(res => resolve(res))
+                        .catch(err => reject('createMenu方法有误'+err))
+                })
+        })
+    }
+    //删除菜单
+    deleteMenu(){
+        return new Promise((resolve,reject) => {
+            this.fetchAccessToken()
+                .then(res => {
+                    const url = `${api.menu.delete}access_token=${res.access_token}`;
+                    rp({method:'GET',json:true,url})
+                        .then(res => resolve(res))
+                        .catch(err => reject('deleteMenu方法有误:'+err));
+                })
+        })
+    }
+    //获取菜单的配置
+    getMenu(){
+        return new Promise((resolve,reject) => {
+            this.fetchAccessToken()
+                .then(res => {
+                    const url = `${api.menu.delete}access_token=${res.access_token}`;
+                    rp({method:'GET',json:true,url})
+                        .then(res => resolve(res))
+                        .catch(err => reject('getMenu方法有误:'+err))
+                })
+        })
+    }
+    //创建自定义菜单
+    createMyMenu(body){
+        return new Promise((resolve,reject) => {
+            this.fetchAccessToken()
+                .then(res => {
+                    const url = `${api.menu.myCreate}access_token=${res.access_token}`;
+                    rp({method:'POST',json:true,url,body})
+                        .then(res => resolve(res))
+                        .catch(err => reject('createMyMenu方法有误:'+err))
+                })
+        })
+    }
+    //删除自定义菜单
+    deleteMyMenu(body){
+        return new Promise((resolve,reject) => {
+            this.fetchAccessToken()
+                .then(res => {
+                    const url = `${api.menu.myDelete}access_token=${res.access_token}`;
+                    rp({method:'POST',json:true,url,body})
+                        .then(res => resolve(res))
+                        .catch(err => reject('deleteMyMenu方法有误:'+err))
+                })
+        })
+    }
 }
+
+//创建菜单
+(async () => {
+    const wechatApi = new Wechat();
+
+    let data = await wechatApi.deleteMenu();
+    console.log(data);
+    data = await wechatApi.createMenu();
+    console.log(data);
+})()
 
 module.exports = Wechat;
