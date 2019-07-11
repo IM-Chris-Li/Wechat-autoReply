@@ -8,6 +8,8 @@ const sha1 = require('sha1');
 const {getUserDataAsync,parseXMLAsync,formatMessage} = require('../libs/utils');
 //引入reply模块
 const reply = require('./reply');
+//引入Wechat模块
+const {Wechat} = require('./wechat')
 
 module.exports = () => {
     return async (req,res,next) => {
@@ -39,6 +41,15 @@ module.exports = () => {
                 res.send('error');
                 return '';
             }
+
+            //创建菜单
+            (async () => {
+                const wechatApi = new Wechat();
+
+                let data = await wechatApi.deleteMenu();
+                data = await wechatApi.createMenu();
+            })()
+
             //获取用户的消息,返回的数据格式是xml
             const xmlData = await getUserDataAsync(req);
 
