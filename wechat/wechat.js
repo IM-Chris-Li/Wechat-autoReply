@@ -213,7 +213,7 @@ class Wechat {
     let result = await w.deleteMenu();
     console.log(result);
     //创建新的菜单
-    result = await w.createMenu();
+    result = await w.createMenu(menu);
     console.log(result);
 
 })()
