@@ -20,4 +20,5 @@ module.exports = {
         myDelete:prefix + 'menu/delconditional?',
         myTest:prefix + 'menu/trymatch?'
     }
+
 }

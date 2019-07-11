@@ -23,7 +23,7 @@ module.exports = {
                     "key":"扫码带提示"
                 },
                 {
-                    "tpye":"scancode_push",
+                    "type":"scancode_push",
                     "name":"扫码推事件",
                     "key":"扫码推事件"
                 },
