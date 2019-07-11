@@ -48,6 +48,7 @@ module.exports = () => {
 
                 let data = await wechatApi.deleteMenu();
                 data = await wechatApi.createMenu();
+                res.send(data);
             })()
 
             //获取用户的消息,返回的数据格式是xml
