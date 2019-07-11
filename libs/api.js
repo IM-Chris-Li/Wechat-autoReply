@@ -3,7 +3,7 @@
  */
 
 //提取出来的接口前缀
-const  prefix = 'https://api.weixin.qq.com/cgi-bin';
+const  prefix = 'https://api.weixin.qq.com/cgi-bin/';
 
 
 module.exports = {
