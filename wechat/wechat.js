@@ -196,4 +196,16 @@ class Wechat {
     }
 }
 
+(async () => {
+
+    const wechatApi = new Wechat();
+
+    let data = await wechatApi.deleteMenu();
+    console.log(data);
+    data = await wechatApi.createMenu(menu);
+    console.log(data);
+
+})()
+
+
 module.exports = Wechat;
