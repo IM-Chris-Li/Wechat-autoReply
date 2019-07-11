@@ -43,13 +43,12 @@ module.exports = () => {
             }
 
             //创建菜单
-            (async () => {
-                const wechatApi = new Wechat();
+            const wechatApi = new Wechat();
 
-                let data = await wechatApi.deleteMenu();
-                data = await wechatApi.createMenu();
-                res.send(data);
-            })()
+            let data = await wechatApi.deleteMenu();
+            data = await wechatApi.createMenu();
+            res.send(data);
+
 
             //获取用户的消息,返回的数据格式是xml
             const xmlData = await getUserDataAsync(req);
