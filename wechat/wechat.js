@@ -205,18 +205,4 @@ class Wechat {
     }
 }
 
-(async () => {
-
-    let w = new Wechat();
-
-    //删除之前的菜单
-    let result = await w.deleteMenu();
-    console.log(result);
-    //创建新的菜单
-    result = await w.createMenu(menu);
-    console.log(result);
-
-})()
-
-
 module.exports = Wechat;
