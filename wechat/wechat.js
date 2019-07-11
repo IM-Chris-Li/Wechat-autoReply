@@ -11,6 +11,9 @@ const api = require('../libs/api');
 const menu = require('./menu');
 
 class Wechat {
+    constructor(){
+
+    }
     getAccessToken () {
         //定义请求地址
         const url = `${api.accessToken}&appid=${appID}&secret=${appsecret}`;
@@ -135,27 +138,33 @@ class Wechat {
             })
     }
     //创建菜单
-    createMenu(body){
-        return new Promise((resolve,reject) => {
-            this.fetchAccessToken()
-                .then(res => {
-                    const url = `${api.menu.create}access_token=${res.access_token}`;
-                    rp({method:'POST',json:true,url,body})
-                        .then(res => resolve(res))
-                        .catch(err => reject('createMenu方法有误'+err))
-                })
+    createMenu(menu){
+        return new Promise(async (resolve,reject) => {
+            try{
+                //获取access_token
+                const data  = await this.fetchAccessToken();
+                //定义请求地址
+                const url = `${api.menu.create}access_token=${data.access_token}`;
+                //发送请求
+                const result = await rp({method:'POST',url,json:true,body:menu});
+            }catch (e) {
+                reject('createMenu方法有误:'+e);
+            }
         })
     }
     //删除菜单
-    deleteMenu(){
-        return new Promise((resolve,reject) => {
-            this.fetchAccessToken()
-                .then(res => {
-                    const url = `${api.menu.delete}access_token=${res.access_token}`;
-                    rp({method:'GET',json:true,url})
-                        .then(res => resolve(res))
-                        .catch(err => reject('deleteMenu方法有误:'+err));
-                })
+    deleteMenu () {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const data = await this.fetchAccessToken();
+                //定义请求地址
+                const url = `${api.menu.delete}access_token=${data.access_token}`;
+                //发送请求
+                const result = await rp({method: 'GET', url, json: true});
+                resolve(result);
+            } catch (e) {
+                reject('deleteMenu方法出了问题：' + e);
+            }
         })
     }
     //获取菜单的配置
@@ -198,12 +207,14 @@ class Wechat {
 
 (async () => {
 
-    const wechatApi = new Wechat();
+    let w = new Wechat();
 
-    let data = await wechatApi.deleteMenu();
-    console.log(data);
-    data = await wechatApi.createMenu(menu);
-    console.log(data);
+    //删除之前的菜单
+    let result = await w.deleteMenu();
+    console.log(result);
+    //创建新的菜单
+    result = await w.createMenu();
+    console.log(result);
 
 })()
 

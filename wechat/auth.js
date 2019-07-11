@@ -8,6 +8,10 @@ const sha1 = require('sha1');
 const {getUserDataAsync,parseXMLAsync,formatMessage} = require('../libs/utils');
 //引入reply模块
 const reply = require('./reply');
+//引入wechat模块
+const Wechat = require('./wechat')
+
+const wechatApi = new Wechat();
 
 module.exports = () => {
     return async (req,res,next) => {
