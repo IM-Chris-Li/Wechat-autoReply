@@ -142,6 +142,7 @@ class Wechat {
             try{
                 //获取access_token
                 const data  = await this.fetchAccessToken();
+                console.log(data.access_token);
                 //定义请求地址
                 const url = `${api.menu.create}access_token=${data.access_token}`;
                 //发送请求
