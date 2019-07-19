@@ -7,6 +7,7 @@ const request = require('request');
 const {readFile, writeFile, createReadStream, createWriteStream} = require('fs');
 //引入接口文件
 const api = require('../libs/api');
+const menu = require('./menu')
 
 class Wechat {
     constructor(){
