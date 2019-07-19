@@ -9,7 +9,6 @@ const {getUserDataAsync,parseXMLAsync,formatMessage} = require('../libs/utils');
 //引入reply模块
 const reply = require('./reply');
 //引入wechat模块
-const {Wechat} = require('./wechat')
 const menu = require('./menu');
 
 module.exports = () => {
@@ -42,20 +41,6 @@ module.exports = () => {
                 res.send('error');
                 return '';
             }
-
-            (async () => {
-
-                let w = new Wechat();
-
-                //删除之前的菜单
-                let result = await w.deleteMenu();
-                console.log(result);
-                //创建新的菜单
-                result = await w.createMenu(menu);
-                console.log(result);
-
-            })()
-
             //获取用户的消息,返回的数据格式是xml
             const xmlData = await getUserDataAsync(req);
 

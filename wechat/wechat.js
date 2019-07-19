@@ -7,8 +7,6 @@ const request = require('request');
 const {readFile, writeFile, createReadStream, createWriteStream} = require('fs');
 //引入接口文件
 const api = require('../libs/api');
-//引入菜单
-const menu = require('./menu');
 
 class Wechat {
     constructor(){
@@ -206,3 +204,16 @@ class Wechat {
 }
 
 module.exports = Wechat;
+
+(async () => {
+
+    let w = new Wechat();
+
+    //删除之前的菜单
+    let result = await w.deleteMenu();
+    console.log(result);
+    //创建新的菜单
+    result = await w.createMenu(menu);
+    console.log(result);
+
+})()
