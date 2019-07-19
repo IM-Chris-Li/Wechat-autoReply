@@ -61,10 +61,10 @@ module.exports = async message => {
             //用户订阅事件
             content = '---欢迎关注---';
         }
-        if(message.EventKey){
-            //扫描带参数的二维码的订阅事件
-            content = '感谢您的关注';
-        }
+        // // if(message.EventKey){
+        // //     //扫描带参数的二维码的订阅事件
+        // //     content = '感谢您的关注';
+        // }
         else if(message.Event === 'CLICK'){
             if(message.EventKey){
                 content = '···终身学习者的俱乐部···';
