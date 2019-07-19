@@ -65,13 +65,15 @@ module.exports = async message => {
             //扫描带参数的二维码的订阅事件
             content = '感谢您的关注';
         }
-    }else if(message.Event === 'CLICK'){
-        if(message.EventKey){
-            content = '···终身学习者的俱乐部···';
+        else if(message.Event === 'CLICK'){
+            if(message.EventKey){
+                content = '···终身学习者的俱乐部···';
+            }
         }
-    }else if(message.Event === 'VIEW'){
-        //用户点击菜单，跳转到其他url
-        console.log('--- url跳转 ---');
+        else if(message.Event === 'VIEW'){
+            //用户点击菜单，跳转到其他url
+            console.log('--- url跳转 ---');
+        }
     }
 
     //将最终回复消息内容添加到options中
