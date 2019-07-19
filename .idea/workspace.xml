@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888f2fd7-25ac-4a91-be15-6c210d1b8f90" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/wechat/wechat.js" beforeDir="false" afterPath="$PROJECT_DIR$/wechat/wechat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wechat/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/wechat/menu.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat/wechat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="144" column="47" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
+            <state relative-caret-position="386">
+              <caret line="151" column="13" lean-forward="true" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#Wechat#0" />
                 <element signature="n#!!block;n#getAccessToken#0;n#Wechat#0" />
@@ -60,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
-              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+            <state relative-caret-position="360">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -148,11 +148,11 @@
         <option value="$PROJECT_DIR$/wechat/api.js" />
         <option value="$PROJECT_DIR$/wechat/reply.js" />
         <option value="$PROJECT_DIR$/wechat/createMenu.js" />
-        <option value="$PROJECT_DIR$/wechat/menu.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/libs/api.js" />
         <option value="$PROJECT_DIR$/wechat/auth.js" />
         <option value="$PROJECT_DIR$/wechat/wechat.js" />
+        <option value="$PROJECT_DIR$/wechat/menu.js" />
       </list>
     </option>
   </component>
@@ -260,12 +260,12 @@
       <workItem from="1562742005825" duration="7714000" />
       <workItem from="1562811065380" duration="3383000" />
       <workItem from="1562819857037" duration="15970000" />
-      <workItem from="1563498733833" duration="6028000" />
+      <workItem from="1563498733833" duration="8315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55697000" />
+    <option name="totallyTimeSpent" value="57984000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -400,20 +400,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wechat/wechat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="144" column="47" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
+        <state relative-caret-position="386">
+          <caret line="151" column="13" lean-forward="true" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#Wechat#0" />
             <element signature="n#!!block;n#getAccessToken#0;n#Wechat#0" />
@@ -425,6 +415,16 @@
             <element signature="n#!!block;n#getMenu#0;n#Wechat#0" />
             <element signature="n#!!block;n#createMyMenu#0;n#Wechat#0" />
             <element signature="n#!!block;n#deleteMyMenu#0;n#Wechat#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

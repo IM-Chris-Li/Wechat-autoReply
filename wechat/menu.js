@@ -3,54 +3,23 @@
  */
 
 module.exports = {
-    "button":[
-        {
-            "type":"click",
-            "name":"首页",
-            "key":"首页"
-        },
-        {
-            "name":"二级菜单",
-            "sub_button":[
-                {
-                    "type":"view",
-                    "name":"跳转Tesla",
-                    "url":"https://tesla.com/"
-                },
-                {
-                    "type":"scancode_waitmsg",
-                    "name":"扫码带提示",
-                    "key":"扫码带提示"
-                },
-                {
-                    "type":"scancode_push",
-                    "name":"扫码推事件",
-                    "key":"扫码推事件"
-                },
-                {
-                    "type":"pic_sysphoto",
-                    "name":"系统拍照发图",
-                    "key":"系统拍照发图"
-                },
-            ]
-        },
-        {
-            "name":"功能",
-            "sub_button":[
-                {
-                    "type":"pic_weixin",
-                    "name":"微信相册发送图",
-                    "key":"picture"
-                },
-                {
-                    "type":"location_select",
-                    "name":"send loaction",
-                    "key":"loacation"
-                },
-                {
-                    //图文消息
-                }
-            ]
-        }
-    ]
+    "button": [
+    {
+        "type": "miniprogram",
+        "name": "数字校园",
+        "url": "http://mp.weixin.qq.com/",
+        "appid": "wxcad78ec7f3241fcf",
+        "pagepath": "pages/index/index"
+    },
+    {
+        "type":"click",
+        "name": "校园简介",
+        "key" : "···终身学习俱乐部···"
+    },
+    {
+        "type":"view",
+        "name":"校园官网",
+        "url": "https://tesla.com/"
+    }
+]
 }
