@@ -22,4 +22,4 @@ module.exports = {
         uploadOthers: `${prefix}material/add_material?`,
         get: `${prefix}material/get_material?`
     }
-}
+};

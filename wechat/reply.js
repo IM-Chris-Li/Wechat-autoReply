@@ -13,7 +13,7 @@ module.exports = async message => {
         fromUserName:message.ToUserName,
         createTime:Date.now(),
         msgType:'text'
-    }
+    };
 
     //设置回复用户消息的具体内容
     let content = '';
@@ -67,7 +67,7 @@ module.exports = async message => {
         // }
         else if(message.Event === 'CLICK'){
             if(message.EventKey){
-                content = '···终身学习者的俱乐部···';
+            content = 'hello,我是小0同学,已经在此恭候您多时啦~';
             }
         }
         else if(message.Event === 'VIEW'){
